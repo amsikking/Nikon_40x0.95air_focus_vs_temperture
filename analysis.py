@@ -71,8 +71,9 @@ ax2.set_title('Objective expansion = %0.2fum per C \n (CLTE_pK=%0.3e)'%(
     popt[0], CLTE_pK))
 ax2.set_xlabel('temperature (C)')
 ax2.set_ylabel('focal plane shift (um)')
-ax2.plot(t_actual_C, focal_plane_shift_um)
-ax2.plot(t_actual_C, fitted_focal_plane_shift_um)
+ax2.plot(t_actual_C, focal_plane_shift_um, label='data')
+ax2.plot(t_actual_C, fitted_focal_plane_shift_um, label='linear fit')
+ax2.legend(loc="upper left")
 # Format, save and show:
 fig.set_size_inches(8.5, 11)
 plt.subplots_adjust(
