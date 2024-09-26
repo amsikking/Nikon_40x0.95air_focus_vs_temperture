@@ -23,11 +23,24 @@ See the numbered photos in the [photos](https://github.com/amsikking/Nikon_40x0.
 4) [**Scratched mirror with light:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/4_scratched_mirror_with_light.jpg) To accurately find focus, a flat, bright and thin sample with sharp features is preferable. To achieve this a silver mirror (Thorlabs PF10-03-P01) was gently scratched by rubbing the end of a ball driver over the surface in a rotary fashion. Tape was then used to remove the silver fragments to leave a partial silver/glass interface. A white light source (Thorlabs OSL2) was used to illuminate the frosted back side of the mirror, creating a scattered and uniform illumination profile behind the silver coating.
 
 ## Acquisition:
-The data was collected programmatically (see 'acquisition.py') in the following way:
+The data was collected programmatically (see '**acquisition.py**') in the following way:
 - The temperature was set from 22C (just above room temp) to 42C in steps of 1C.
 - A 30min settle time was given after each temperature set point to allow for thermal equilibration. This was proven adequate since an experimental run with a 3min settle time gave almost the same results.
 - After waiting the settle time, a z stack of 400 images were acquired over the 100um piezo range with an axial separation of 0.25um (about 2x Nyquist sampling based on a depth of field of ~1um).
 - The temperature from the thermistor was recorded before and after each z stack.
+
+## Data:
+Both the full 'data' and 'data_cropped' were analyzed. Both gave the same results, but only the cropped data was included in the repository to save on storage and computation time. Cropping was performed according to 'data_cropped.py'.
+
+## Analysis:
+The data was analyzed programmatically (see '**analysis.py**') in the following way:
+- At each temperature set point, the sum of the gradient magnitude of each image in the z stack was calculated. The image with the highest gradient magnitude sum (i.e. the 'sharpest features') was then selected as the focal plane.
+- The temperature used for analysis was the average of the measured before and after z stack temperatures (which measured the same in all cases). The measured range was 21.8-39.5C (see data\metadata.txt).
+- The focal plane position (um) was then plotted against the measured temperatures (C) giving a linear trend.
+- The linear trend was then fitted with a straight line to give an accurate estimate of the axial shift of the focal plane with temperature and the associated coefficient of linear thermal expansion (CLTE).
+- See the included figure '**Nikon_40x0.95air_focus_vs_temperature_data.png**' for the end result.
+
+To reproduce the analysis of the cropped data download the repository and run 'analysis.py'.
 
 ## Acknowledgments:
 Inspired by, and with contributions from: [jlazzaridean](https://github.com/jlazzaridean) and [AndrewGYork](https://github.com/AndrewGYork).
