@@ -7,5 +7,20 @@ The focal plane of a Nikon 40x0.95 air objective (MRD00405) moves axially with t
 
 ![social_preview](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/social_preview.png)
 
+## Test setup:
+See the numbered photos in the [photos](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/tree/main/photos) folder or click on the links below:
+
+0) [**Overview:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/0_overview.jpg)
+    - A minimal microscope was built on a full size optical table (305mm thick, Newport M-RS4000-46-12).
+    - The microscope consisted of an objective (Nikon MRD00405), a tube lens (Thorlabs TTL200-A) and a camera (Thorlabs CS165MU1).
+    - The optics were carefully aligned onto the same optical axis using an alignment laser, and the camera focus was set using a collimated beam into the tube lens (see 'alignment_laser.tif' for focus). The axial separation of the objective and tube lens was set with a ruler to ~170mm (within spec).
+    - The objective is coverslip corrected, so a small ~170um optical window was bonded to the front, and the correction collar was adjusted to 170um. This is an unusual thing to do to but is required for another setup, see [here](https://andrewgyork.github.io/high_na_single_objective_lightsheet/appendix.html#Parts_em_optical) for details on the optical window.
+    - The objective was mounted firmly: firstly into a thread adaptor (Thorlabs SM2A33), then into a short 2in lens tube (Thorlabs SM2L05) housed in a 2in flexure mount (Thorlabs SM2RC/M). The flexure mount was attached to a thermally isolating 25mm diameter fiberglass post (Thorlabs RS50G/M) and secured onto the optical table with a non bridging flexure clamp (Thorlabs POLARIS-CA25/M).
+    - Using the same mounting method, but with a steel post (Thorlabs RS50/M) instead of fiberglass, a 100um range piezo (PI P-726.1CD) was used to hold a flat sample in the focal plane of the objective.
+1) [**Objective heater and insulation:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/1_objective_heater_and_insulation.jpg) Heat tape with a built in thermister (Thorlabs TLK-H) was taped onto the body of the objective and driven with a PID controller (Thorlabs TC200).
+2) [**Insulated setup:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/2_insulated_setup.jpg) An insulated jacket fashioned out of thick foam (Uline S-13715) was secured to the objective with lab tape. This helped reduce heat transfer to the air, which reduced equilibration time and thermal gradients.
+3) [**Objective mirror piezo:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/3_objective_mirror_piezo.jpg) A silver mirror was mounted into a 1in lens tube and screwed into the 100um piezo. The axial position of the mirror was adjusted to be roughly in focus with the piezo set to 80um. This ensured that as the objective was heated (and expanded) that the piezo could retract towards 0um to find the new position of the focal plane.
+4) [**Scratched mirror with light:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/4_scratched_mirror_with_light.jpg) To accurately find focus, a flat, bright and thin sample with sharp features is preferable. To achieve this a silver mirror (Thorlabs PF10-03-P01) was gently scratched by rubbing the end of a ball driver over the surface in a rotary fashion. Tape was then used to remove the silver fragments to leave a partial silver/glass interface. A white light source (Thorlabs OSL2) was used to illuminate the frosted back side of the mirror, creating a scattered and uniform illumination profile behind the silver coating.
+
 ## Acknowledgments:
 Inspired by, and with contributions from: [jlazzaridean](https://github.com/jlazzaridean) and [AndrewGYork](https://github.com/AndrewGYork).
