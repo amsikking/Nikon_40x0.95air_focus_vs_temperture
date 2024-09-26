@@ -32,6 +32,8 @@ The data was collected programmatically (see '**acquisition.py**') in the follow
 ## Data:
 Both the full 'data' and 'data_cropped' were analyzed. Both gave the same results, but only the cropped data was included in the repository to save on storage and computation time. Cropping was performed according to 'data_cropped.py'.
 
+**Note:** When inspecting the data manually, in addition to the obvious temperature induced focal plane drift, there is also a significant left right drift in the image. The left right axis on the camera corresponds to the vertical axis on the optical table, so this image motion is likely from the expansion of the fiberglass post and other mechanical elements holding the objective on the table.
+
 ## Analysis:
 The data was analyzed programmatically (see '**analysis.py**') in the following way:
 - At each temperature set point, the sum of the gradient magnitude of each image in the z stack was calculated. The image with the highest gradient magnitude sum (i.e. the 'sharpest features') was then selected as the focal plane.
