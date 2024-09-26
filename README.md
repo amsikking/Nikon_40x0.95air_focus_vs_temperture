@@ -22,5 +22,12 @@ See the numbered photos in the [photos](https://github.com/amsikking/Nikon_40x0.
 3) [**Objective mirror piezo:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/3_objective_mirror_piezo.jpg) A silver mirror was mounted into a 1in lens tube and screwed into the 100um piezo. The axial position of the mirror was adjusted to be roughly in focus with the piezo set to 80um. This ensured that as the objective was heated (and expanded) that the piezo could retract towards 0um to find the new position of the focal plane.
 4) [**Scratched mirror with light:**](https://github.com/amsikking/Nikon_40x0.95air_focus_vs_temperture/blob/main/photos/4_scratched_mirror_with_light.jpg) To accurately find focus, a flat, bright and thin sample with sharp features is preferable. To achieve this a silver mirror (Thorlabs PF10-03-P01) was gently scratched by rubbing the end of a ball driver over the surface in a rotary fashion. Tape was then used to remove the silver fragments to leave a partial silver/glass interface. A white light source (Thorlabs OSL2) was used to illuminate the frosted back side of the mirror, creating a scattered and uniform illumination profile behind the silver coating.
 
+## Acquisition:
+The data was collected programmatically (see 'acquisition.py') in the following way:
+- The temperature was set from 22C (just above room temp) to 42C in steps of 1C.
+- A 30min settle time was given after each temperature set point to allow for thermal equilibration. This was proven adequate since an experimental run with a 3min settle time gave almost the same results.
+- After waiting the settle time, a z stack of 400 images were acquired over the 100um piezo range with an axial separation of 0.25um (about 2x Nyquist sampling based on a depth of field of ~1um).
+- The temperature from the thermistor was recorded before and after each z stack.
+
 ## Acknowledgments:
 Inspired by, and with contributions from: [jlazzaridean](https://github.com/jlazzaridean) and [AndrewGYork](https://github.com/AndrewGYork).
